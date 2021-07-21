@@ -1,0 +1,45 @@
+﻿@model IEnumerable<isrpo_practice.Contract>
+
+@{
+    ViewBag.Title = "Договоры";
+}
+
+<h2>Договор</h2>
+
+<p>
+    @Html.ActionLink("Добавить договор", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            № договора
+        </th>
+        <th>
+            Дата подписания
+        </th>
+        <th>
+            Дата завершения
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_contract)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_of_signing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.target_date_)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id = item.Id_contract }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = item.Id_contract }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id_contract })
+        </td>
+    </tr>
+}
+
+</table>

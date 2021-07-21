@@ -1,0 +1,41 @@
+﻿@model IEnumerable<isrpo_practice.Badge>
+
+@{
+    ViewBag.Title = "Пропуск";
+}
+
+<h2>Пропуск</h2>
+
+<p>
+    @Html.ActionLink("Добавить № пропуска", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            № пропуска
+        </th>
+
+        <th>
+            Дата выдачи
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

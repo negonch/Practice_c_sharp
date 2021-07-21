@@ -1,0 +1,42 @@
+﻿@model isrpo_practice.Contract
+
+@{
+    ViewBag.Title = "Подробнее";
+}
+
+<h2>Подробнее</h2>
+
+<div>
+    <h4>Договор</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            № договора
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_signing)
+        </dd>
+
+        <dt>
+            Дата подписания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_signing)
+        </dd>
+
+        <dt>
+            Дата завершения
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.target_date_)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id_contract }) |
+    @Html.ActionLink("К списку договоров", "Index")
+</p>

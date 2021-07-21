@@ -1,0 +1,42 @@
+﻿@model isrpo_practice.Room
+
+@{
+    ViewBag.Title = "Подробнее";
+}
+
+<h2>Подробнее</h2>
+
+<div>
+    <h4>Комната</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            № комнаты
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_room)
+        </dd>
+
+        <dt>
+            Количество человек
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_of_person)
+        </dd>
+
+        <dt>
+            Комментарий
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id_room }) |
+    @Html.ActionLink("К списку комнат", "Index")
+</p>

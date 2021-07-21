@@ -1,0 +1,44 @@
+﻿@model IEnumerable<isrpo_practice.Room>
+
+@{
+    ViewBag.Title = "Комната";
+}
+
+<h2>Комната</h2>
+
+<p>
+    @Html.ActionLink("Добавить № комнаты", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+             № комнаты
+        </th>
+        <th>
+            Количество человек
+        </th>
+        <th>
+            Комментарий
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.number_of_person)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить ", "Edit", new { id = item.Id_room }) |
+            @Html.ActionLink("Подробнее", "Details", new { id = item.Id_room }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id_room })
+        </td>
+    </tr>
+}
+
+</table>

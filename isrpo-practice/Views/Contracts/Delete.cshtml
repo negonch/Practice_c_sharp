@@ -1,0 +1,48 @@
+﻿@model isrpo_practice.Contract
+
+@{
+    ViewBag.Title = "Удалить";
+}
+
+<h2>Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Договор</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            № договора
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_contract)
+        </dd>
+
+        <dt>
+            Дата подписания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_signing)
+        </dd>
+
+        <dt>
+            Дата завершения
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.target_date_)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("К списку договоров", "Index")
+        </div>
+    }
+</div>

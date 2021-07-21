@@ -1,0 +1,80 @@
+﻿@model isrpo_practice.Student
+
+@{
+    ViewBag.Title = "Удалить";
+}
+
+<h2>Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Студент</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Фамилия
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Family)
+        </dd>
+
+        <dt>
+            Имя
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Отчество
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Othestvo)
+        </dd>
+
+        <dt>
+            Адрес
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            № пропуска
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Badge.Id)
+        </dd>
+
+        <dt>
+            № договора
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contract.Id_contract)
+        </dd>
+
+        <dt>
+            № комнаты
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.Id_room)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("К списку студентов", "Index")
+        </div>
+    }
+</div>
